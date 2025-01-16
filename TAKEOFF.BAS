@@ -24,7 +24,7 @@
 200 STOP
 3000 REM THIS SECTION IS NOT IN THE ORIGINAL BOOK AND IS SIMPLY
 3010 REM THE CODE REQUIRED TO CLEAR THE SCREEN.
-4999 rem screen manipulation to print at locations
+4999 rem clear screen control code for the SC108/RC2014
 5000 REM CLEAR SCREEN                   
 5010 PRINT CHR$(27);"[2J";
 5020 RETURN       
