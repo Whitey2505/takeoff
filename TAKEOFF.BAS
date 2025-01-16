@@ -1,0 +1,32 @@
+1 REM this is the game Takeoff from the 1982 book Computer 
+2 rem Spacegames. Ported to run on my SC108/RC2014 style z80
+3 rem There are some minor tweaks to get it to run but fundamentally
+4 rem the game from the book in its original form
+15 GOSUB 5000
+20 PRINT "STARSHIP TAKE-OFF!!"
+30 LET G=INT(RND*20)
+40 LET W=INT(RND*40)
+50 LET R=G*W
+60 PRINT "GRAVITY = ";G
+70 PRINT "ENTER FORCE REQUIRED "
+80 FOR C= 1 TO 10
+90 INPUT F
+100 IF F>R THEN PRINT "TOO HIGH!";
+110 IF F<R THEN PRINT "TOO LOW";
+120 IF F=R THEN GOTO 190
+130 IF C<>R THEN PRINT ", TRY AGAIN"
+140 NEXT C
+150 PRINT
+160 PRINT "YOU FAILED -"
+170 PRINT "THE ALIENS GOT YOU"
+180 STOP
+190 PRINT "GOOD TAKE OFF - YOU ESCAPED!"
+200 STOP
+3000 REM THIS SECTION IS NOT IN THE ORIGINAL BOOK AND IS SIMPLY
+3010 REM THE CODE REQUIRED TO CLEAR THE SCREEN.
+4999 rem screen manipulation to print at locations
+5000 REM CLEAR SCREEN                   
+5010 PRINT CHR$(27);"[2J";
+5020 RETURN       
+
+
